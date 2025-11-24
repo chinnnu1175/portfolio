@@ -5,31 +5,48 @@
   <title>Chinmaya Gowda | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+
   <style>
     body { margin: 0; font-family: 'Montserrat', sans-serif; background: linear-gradient(135deg, #AEE2FF 0%, #F8FFAE 100%); }
-    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 12px 30px rgba(44,84,130,0.08); padding: 40px 32px 32px; }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 12px 30px rgba(44,84,130,0.08); padding: 40px 32px; }
+
     .intro { font-size: 1.35rem; color: #255c7c; margin-bottom: 24px; }
     .animated { color: #ee7e20; font-weight: bold; border-right: 2px solid #ee7e20; padding-right: 4px; animation: blink 0.9s steps(1) infinite; }
     @keyframes blink { 50% { border-color: transparent; } }
-    .section-title { color: #256D85; margin-top: 32px; margin-bottom: 9px; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #AEE2FF; display: inline-block; padding-bottom: 2px; }
+
+    .section-title { color: #256D85; margin-top: 32px; margin-bottom: 9px; font-size: 1.15rem;
+      text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #AEE2FF; display: inline-block; padding-bottom: 2px; }
+
     .resume-list li { margin-bottom: 6px; }
     .interests { margin-bottom: 10px; }
+
     .skills { margin-top: 12px; }
-    .skill-bar { background: #ede7f6; border-radius: 6px; margin-bottom: 10px; width: 100%; height: 24px; position: relative; }
-    .skill-bar-fill { background: linear-gradient(90deg, #256D85 0%, #ee7e20 100%); height: 100%; border-radius: 6px; width: 0%; transition: width 1.7s; color: #fff; display: flex; align-items: center; padding-left: 8px; font-size: 1em; }
+    .skill-bar { background: #ede7f6; border-radius: 6px; margin-bottom: 10px; width: 100%; height: 24px; }
+    .skill-bar-fill { background: linear-gradient(90deg, #256D85 0%, #ee7e20 100%); height: 100%; border-radius: 6px; width: 0%; transition: width 1.7s; color: #fff;
+      display: flex; align-items: center; padding-left: 8px; }
+
     .contact-info { font-size: 1.1em; margin-bottom: 18px; background: #e3f2fd; padding: 10px 16px; border-radius: 7px; }
-    .contact-info a { color: #256D85; text-decoration: none; word-break: break-all; }
+    .contact-info a { color: #256D85; word-break: break-all; text-decoration: none; }
+
     .contact-form { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
-    .contact-form input, .contact-form textarea { padding: 9px; border-radius: 5px; border: 1px solid #AEE2FF; font-size: 1em; font-family: 'Montserrat', sans-serif; }
-    .contact-form button { background: #256D85; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 1em; cursor: pointer; transition: background 0.2s; }
+    .contact-form input, .contact-form textarea {
+      padding: 9px; border-radius: 5px; border: 1px solid #AEE2FF;
+      font-size: 1em; font-family: 'Montserrat', sans-serif;
+    }
+    .contact-form button {
+      background: #256D85; color: #fff; border: none; border-radius: 5px;
+      padding: 10px 22px; cursor: pointer; transition: 0.2s;
+    }
     .contact-form button:hover { background: #ee7e20; }
+
     .message { color: green; font-weight: bold; }
-    .error { color: #b00020; font-weight: bold; }
-    @media (max-width:730px) { .container { margin:24px; padding:20px;} }
+    .error { color: red; font-weight: bold; }
   </style>
 </head>
+
 <body>
   <div class="container">
+
     <div class="intro">
       Hi, I am <span class="animated" id="typed"></span>
     </div>
@@ -45,12 +62,12 @@
 
     <div>
       <div class="section-title">Professional Courses</div>
-      <p>I have completed several professional crash courses to boost my skills and knowledge in technology and programming.</p>
+      <p>I have completed several professional courses to improve my skills including coding, communication, and design tools.</p>
     </div>
 
     <div>
       <div class="section-title">Interests</div>
-      <div class="interests">Technology • Programming • Hackathons • Design • YouTube Learning • Friends</div>
+      <div class="interests">Technology • Programming • Hackathons • Design • YouTube Learning • Making New Friends</div>
     </div>
 
     <div>
@@ -69,73 +86,93 @@
 
     <div>
       <div class="section-title">About Me</div>
-      <p>I'm enthusiastic about technology and always eager to learn something new.</p>
+      <p>I’m enthusiastic about technology and always eager to learn. I enjoy coding, hackathons, and making new friends.</p>
     </div>
 
     <div>
       <div class="section-title">Contact Me</div>
+
       <div class="contact-info">
         <strong>Phone:</strong> <a href="tel:9380070650">9380070650</a><br>
         <strong>Email:</strong> <a href="mailto:chinmaygoudar@gmail.com">chinmaygoudar@gmail.com</a><br>
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chinmay-gowda-793246385">chinmay-gowda</a>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/chinmay-gowda-793246385">linkedin.com/in/chinmay-gowda</a>
       </div>
 
       <form class="contact-form" id="contactForm">
-        <input type="text" id="contact-name" placeholder="Your Name" required />
-        <input type="email" id="contact-email" placeholder="Your Email" required />
+        <input type="text" id="contact-name" placeholder="Your Name" required>
+        <input type="email" id="contact-email" placeholder="Your Email" required>
         <textarea id="contact-msg" rows="3" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
-        <div id="form-message" class="message" role="status"></div>
+        <div id="form-message" class="message"></div>
       </form>
     </div>
+
   </div>
 
-  <!-- EmailJS -->
+  <!-- EMAILJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script>
-    // Typing animation
-    const texts = ["Chinmaya Gowda.", "a Student.", "a Learner.", "a Future Engineer!"];
-    let count = 0, index = 0;
-    function typeText() {
-      if (count === texts.length) count = 0;
-      const current = texts[count];
-      const letter = current.slice(0, ++index);
-      typed.textContent = letter;
-      letter.length === current.length ?
-        setTimeout(() => { index = 0; count++; setTimeout(typeText, 430); }, 900)
-        : setTimeout(typeText, 90);
+    /* Typing animation */
+    const typed = document.getElementById('typed');
+    const words = ["Chinmaya Gowda.", "a Student.", "a Learner.", "a Future Engineer!"];
+    let idx = 0, charIndex = 0;
+
+    function typeEffect() {
+      if (idx === words.length) idx = 0;
+      let text = words[idx].slice(0, ++charIndex);
+      typed.textContent = text;
+
+      if (text.length === words[idx].length) {
+        setTimeout(() => { charIndex = 0; idx++; typeEffect(); }, 1000);
+      } else {
+        setTimeout(typeEffect, 90);
+      }
     }
-    typeText();
+    typeEffect();
 
-    // Skill bar animation
-    setTimeout(()=>{
-      skill-c.style.width = '55%';
-      skill-design.style.width = '70%';
-      skill-comm.style.width = '80%';
-    },900);
+    /* Skill Bar Animation */
+    setTimeout(() => {
+      document.getElementById('skill-c').style.width = "55%";
+      document.getElementById('skill-design').style.width = "70%";
+      document.getElementById('skill-comm').style.width = "80%";
+    }, 900);
 
-    // EmailJS setup
-    emailjs.init("lBfR5v5j5kNWi1RN8");
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const msgDiv = document.getElementById("form-message");
-      msgDiv.textContent = "Sending...";
+    /* ---- EMAILJS CONFIG (NEW VALUES) ---- */
+    const SERVICE_ID = "service_6dhju79";
+    const TEMPLATE_ID = "template_z6j9uzh";
+    const PUBLIC_KEY = "pL4l68QIpo5aKujXg";   /* 👈 Updated public key */
 
-      emailjs.send("service_tb8jwt1", "template_kguyear", {
-        from_name: contact-name.value,
-        from_email: contact-email.value,
-        message: contact-msg.value
-      })
-      .then(() => {
-        msgDiv.textContent = "Message sent!";
-        this.reset();
-      })
-      .catch(() => {
-        msgDiv.textContent = "Error — Try Again.";
-        msgDiv.className = "error";
-      });
+    emailjs.init(PUBLIC_KEY);
+
+    const form = document.getElementById("contactForm");
+    const msgBox = document.getElementById("form-message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      msgBox.textContent = "Sending...";
+
+      const params = {
+        from_name: document.getElementById("contact-name").value,
+        from_email: document.getElementById("contact-email").value,
+        message: document.getElementById("contact-msg").value
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
+        .then(() => {
+          msgBox.textContent = "Message sent successfully!";
+          form.reset();
+        })
+        .catch(() => {
+          msgBox.textContent = "Failed to send message.";
+          msgBox.classList.add("error");
+        });
     });
   </script>
 </body>
+</html>
+
 </html>
