@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chinmaya Gowda | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: linear-gradient(135deg, #AEE2FF 0%, #F8FFAE 100%); }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 12px 30px rgba(44,84,130,0.08); padding: 40px 32px 32px; }
+    .intro { font-size: 1.35rem; color: #255c7c; margin-bottom: 24px; }
+    .animated { color: #ee7e20; font-weight: bold; border-right: 2px solid #ee7e20; padding-right: 4px; animation: blink 0.9s steps(1) infinite; }
+    @keyframes blink { 50% { border-color: transparent; } }
+    .section-title { color: #256D85; margin-top: 32px; margin-bottom: 9px; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #AEE2FF; display: inline-block; padding-bottom: 2px; }
+    .resume-list li { margin-bottom: 6px; }
+    .interests { margin-bottom: 10px; }
+    .skills { margin-top: 12px; }
+    .skill-bar { background: #ede7f6; border-radius: 6px; margin-bottom: 10px; width: 100%; height: 24px; position: relative; }
+    .skill-bar-fill { background: linear-gradient(90deg, #256D85 0%, #ee7e20 100%); height: 100%; border-radius: 6px; width: 0%; transition: width 1.7s; color: #fff; display: flex; align-items: center; padding-left: 8px; font-size: 1em; }
+    .contact-info { font-size: 1.1em; margin-bottom: 18px; background: #e3f2fd; padding: 10px 16px; border-radius: 7px; }
+    .contact-info a { color: #256D85; text-decoration: none; word-break: break-all; }
+    .contact-form { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .contact-form input, .contact-form textarea { padding: 9px; border-radius: 5px; border: 1px solid #AEE2FF; font-size: 1em; font-family: 'Montserrat', sans-serif; }
+    .contact-form button { background: #256D85; color: #fff; border: none; border-radius: 5px; padding: 10px 22px; font-size: 1em; cursor: pointer; transition: background 0.2s; }
+    .contact-form button:hover { background: #ee7e20; }
+    .message { color: green; font-weight: bold; }
+    .error { color: #b00020; font-weight: bold; }
+    @media (max-width:730px) { .container { margin:24px; padding:20px;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="intro">
+      Hi, I am <span class="animated" id="typed"></span>
+    </div>
+
+    <div>
+      <div class="section-title">Education</div>
+      <ul class="resume-list">
+        <li>10th Standard: <strong>85%</strong></li>
+        <li>12th Standard: <strong>92%</strong></li>
+        <li><strong>Currently:</strong> 1st Year @ AMC Engineering College</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="section-title">Professional Courses</div>
+      <p>I have completed several professional crash courses to boost my skills and knowledge in technology and programming.</p>
+    </div>
+
+    <div>
+      <div class="section-title">Interests</div>
+      <div class="interests">Technology • Programming • Hackathons • Design • YouTube Learning • Friends</div>
+    </div>
+
+    <div>
+      <div class="section-title">Skills</div>
+      <div class="skills">
+        <div>Programming (C, C++)</div>
+        <div class="skill-bar"><div class="skill-bar-fill" id="skill-c">Beginner</div></div>
+
+        <div>Photo Editing & Design</div>
+        <div class="skill-bar"><div class="skill-bar-fill" id="skill-design">Intermediate</div></div>
+
+        <div>Communication</div>
+        <div class="skill-bar"><div class="skill-bar-fill" id="skill-comm">Intermediate</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-title">About Me</div>
+      <p>I'm enthusiastic about technology and always eager to learn something new.</p>
+    </div>
+
+    <div>
+      <div class="section-title">Contact Me</div>
+      <div class="contact-info">
+        <strong>Phone:</strong> <a href="tel:9380070650">9380070650</a><br>
+        <strong>Email:</strong> <a href="mailto:chinmaygoudar@gmail.com">chinmaygoudar@gmail.com</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chinmay-gowda-793246385">chinmay-gowda</a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="contact-name" placeholder="Your Name" required />
+        <input type="email" id="contact-email" placeholder="Your Email" required />
+        <textarea id="contact-msg" rows="3" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div id="form-message" class="message" role="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Typing animation
+    const texts = ["Chinmaya Gowda.", "a Student.", "a Learner.", "a Future Engineer!"];
+    let count = 0, index = 0;
+    function typeText() {
+      if (count === texts.length) count = 0;
+      const current = texts[count];
+      const letter = current.slice(0, ++index);
+      typed.textContent = letter;
+      letter.length === current.length ?
+        setTimeout(() => { index = 0; count++; setTimeout(typeText, 430); }, 900)
+        : setTimeout(typeText, 90);
+    }
+    typeText();
+
+    // Skill bar animation
+    setTimeout(()=>{
+      skill-c.style.width = '55%';
+      skill-design.style.width = '70%';
+      skill-comm.style.width = '80%';
+    },900);
+
+    // EmailJS setup
+    emailjs.init("lBfR5v5j5kNWi1RN8");
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const msgDiv = document.getElementById("form-message");
+      msgDiv.textContent = "Sending...";
+
+      emailjs.send("service_tb8jwt1", "template_kguyear", {
+        from_name: contact-name.value,
+        from_email: contact-email.value,
+        message: contact-msg.value
+      })
+      .then(() => {
+        msgDiv.textContent = "Message sent!";
+        this.reset();
+      })
+      .catch(() => {
+        msgDiv.textContent = "Error — Try Again.";
+        msgDiv.className = "error";
+      });
+    });
+  </script>
+</body>
+</html>
